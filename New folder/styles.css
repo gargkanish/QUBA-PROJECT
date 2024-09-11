@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff0081, #ff8c00, #ff0081, #ff8c00);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.player-container {
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    width: 300px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.player-header h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.player-controls {
+    margin-bottom: 20px;
+}
+
+.control-btn {
+    background-color: #1db954;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.control-btn:hover {
+    background-color: #1ed760;
+}
+
+.player-track-list, .player-playlists {
+    list-style: none;
+    padding: 0;
+}
+
+.track-item, .playlist-item {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.track-item:hover, .playlist-item:hover {
+    background-color: #333;
+}
+
+.lyrics-section, .profile-section {
+    margin-top: 20px;
+    color: #ffffff;
+    text-align: left;
+}
+
+#lyrics {
+    font-size: 14px;
+    color: #dcdcdc;
+}
+
+.profile-section p {
+    font-size: 14px;
+    color: #dcdcdc;
+}
+
+audio {
+    width: 100%;
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.beat-animation {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transform: translateX(-50%);
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1) translateX(-50%);
+    }
+    50% {
+        transform: scale(1.5) translateX(-50%);
+    }
+}
